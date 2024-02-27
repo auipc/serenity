@@ -1,0 +1,20 @@
+enum AutomationRate {
+    "a-rate",
+    "k-rate"
+};
+
+[Exposed=Window]
+interface AudioParam {
+    attribute float value;
+    // FIXME: attribute AutomationRate automationRate;
+    // FIXME: readonly attribute float defaultValue;
+    // FIXME: readonly attribute float minValue;
+    // FIXME: readonly attribute float maxValue;
+    AudioParam setValueAtTime (float value, double startTime);
+    // FIXME: AudioParam linearRampToValueAtTime (float value, double endTime);
+    // FIXME: AudioParam exponentialRampToValueAtTime (float value, double endTime);
+    // FIXME: AudioParam setTargetAtTime (float target, double startTime, float timeConstant);
+    // FIXME: AudioParam setValueCurveAtTime (sequence<float> values, double startTime, double duration);
+    // FIXME: AudioParam cancelScheduledValues (double cancelTime);
+    // FIXME: AudioParam cancelAndHoldAtTime (double cancelTime);
+};

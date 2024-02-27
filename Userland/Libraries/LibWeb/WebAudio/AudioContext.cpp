@@ -298,7 +298,8 @@ void AudioContext::queue_a_media_element_task(JS::SafeFunction<void()> steps)
 // FIXME: Actually implement the rendering thread
 bool AudioContext::start_rendering_audio_graph()
 {
-    bool render_result = true;
+    // 1. Let render result be false.
+    bool render_result = false;
     return render_result;
 }
 

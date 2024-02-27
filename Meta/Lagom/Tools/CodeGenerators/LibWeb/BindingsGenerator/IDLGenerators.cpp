@@ -34,7 +34,10 @@ static bool is_platform_object(Type const& type)
         "AnimationTimeline"sv,
         "Attr"sv,
         "AudioTrack"sv,
+        "AudioDestinationNode"sv,
+        "AudioNode"sv,
         "Blob"sv,
+        "BaseAudioContext"sv,
         "CanvasGradient"sv,
         "CanvasPattern"sv,
         "CanvasRenderingContext2D"sv,
@@ -74,6 +77,7 @@ static bool is_platform_object(Type const& type)
         "WebGLRenderingContext"sv,
         "Window"sv,
         "WritableStream"sv,
+        "GainNode"sv,
     };
     if (type.name().ends_with("Element"sv))
         return true;

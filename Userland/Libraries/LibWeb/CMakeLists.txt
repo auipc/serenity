@@ -621,6 +621,10 @@ set(SOURCES
     WebAssembly/Table.cpp
     WebAssembly/WebAssembly.cpp
     WebAudio/AudioContext.cpp
+    WebAudio/AudioDestinationNode.cpp
+    WebAudio/AudioNode.cpp
+    WebAudio/AudioParam.cpp
+    WebAudio/GainNode.cpp
     WebAudio/BaseAudioContext.cpp
     WebDriver/Capabilities.cpp
     WebDriver/Client.cpp

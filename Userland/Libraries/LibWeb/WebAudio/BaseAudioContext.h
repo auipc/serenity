@@ -14,6 +14,7 @@ namespace Web::WebAudio {
 // https://webaudio.github.io/web-audio-api/#BaseAudioContext
 class BaseAudioContext : public DOM::EventTarget {
     WEB_PLATFORM_OBJECT(BaseAudioContext, DOM::EventTarget);
+    JS_DECLARE_ALLOCATOR(BaseAudioContext);
 
 public:
     virtual ~BaseAudioContext() override;
@@ -29,6 +30,13 @@ public:
     void set_control_state(Bindings::AudioContextState state) { m_control_thread_state = state; }
     void set_rendering_state(Bindings::AudioContextState state) { m_rendering_thread_state = state; }
 
+    JS::NonnullGCPtr<AudioDestinationNode> destination() const
+    {
+        return m_destination;
+    }
+
+    JS::NonnullGCPtr<GainNode> create_gain();
+
 protected:
     explicit BaseAudioContext(JS::Realm&);
 
@@ -38,8 +46,11 @@ private:
     float m_sample_rate { 0 };
     double m_current_time { 0 };
 
+    JS::NonnullGCPtr<AudioDestinationNode> m_destination;
+
     Bindings::AudioContextState m_control_thread_state = Bindings::AudioContextState::Suspended;
     Bindings::AudioContextState m_rendering_thread_state = Bindings::AudioContextState::Suspended;
 };
 
 }
+
